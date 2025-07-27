@@ -1,0 +1,7 @@
+{
+  "installType": "script",
+  "entryPoint": [
+    "chmod +x main.py",
+    "echo 'Setting up Polly example package...'"
+  ]
+}
