@@ -13,6 +13,7 @@ def main():
     print("   required for Polly packages.")
     print()
     print("📋 Required files:")
+    print("   • .polly.json - Package metadata")
     print("   • .install.polly.json - Package installation metadata")
     print("   • main.py (or your entry point) - Your application code")
     print()
