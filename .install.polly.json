@@ -2,7 +2,7 @@
   "installType": "executable",
   "installExecutablePath": "/usr/local/bin/pollyexample",
   "entryPoint": [
-    "cp main.py /usr/local/bin/pollyexample",
+    "sudo cp main.py /usr/local/bin/pollyexample",
     "echo 'Executable installed to /usr/local/bin/pollyexample'"
   ]
 }
