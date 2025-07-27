@@ -1,7 +1,6 @@
 {
   "installType": "script",
   "entryPoint": [
-    "chmod +x main.py",
-    "echo 'Setting up Polly example package...'"
+    "python3 main.py"
   ]
 }
