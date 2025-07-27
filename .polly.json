@@ -1,0 +1,14 @@
+{
+  "name": "Polly Example Package",
+  "id": "polly-example",
+  "description": "A simple example package demonstrating Polly package structure and metadata requirements",
+  "version": "1.0.0",
+  "author": "The Polly Developers",
+  "license": "MIT",
+  "homepage": "https://github.com/pollypm/polly",
+  "tags": [
+    "example",
+    "demo",
+    "template"
+  ]
+}
