@@ -11,6 +11,8 @@ This is the core metadata file that Polly uses to understand how to install your
 - `install`: a list of commands to be executed sequentially when the package is installed.
 - `uninstall`: a list of commands to be executed sequentially when the package is uninstalled.
 
+*Note:* On package upgrade, the uninstall commands and then the install commands will be executed!
+
 ### `.polly.json` (Optional)
 Additional metadata for package discovery and information display.
 
