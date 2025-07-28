@@ -1,8 +1,9 @@
 {
-  "installType": "executable",
-  "installExecutablePath": "/usr/local/bin/pollyexample",
-  "entryPoint": [
-    "sudo cp main.py /usr/local/bin/pollyexample",
-    "echo 'Executable installed to /usr/local/bin/pollyexample'"
+  "install": [
+    "sudo cp main.py /usr/local/bin/polly-example",
+    "sudo chmod +x /usr/local/bin/polly-example"
+  ],
+  "uninstall": [
+    "sudo rm /usr/local/bin/polly-example"
   ]
 }

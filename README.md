@@ -2,61 +2,32 @@
 
 This is a demonstration package showing the proper structure and metadata requirements for creating Polly-compatible packages.
 
-## 📋 Required Files
+## Package Files
 
 ### `.install.polly.json` (Required)
 This is the core metadata file that Polly uses to understand how to install your package.
 
 **Required fields:**
-- `installType`: Must be one of `"executable"`, `"library"`, or `"script"`
-- `entryPoint`: Array of shell commands to run during installation
-
-**Conditional requirements:**
-- If `installType` is `"executable"`, you must also include `installExecutablePath`
+- `install`: a list of commands to be executed sequentially when the package is installed.
+- `uninstall`: a list of commands to be executed sequentially when the package is uninstalled.
 
 ### `.polly.json` (Optional)
 Additional metadata for package discovery and information display.
 
-## 🔧 Install Types
+## Install File Format
 
-### `"script"`
-For packages that are scripts or need setup commands to run.
 ```json
 {
-  "installType": "script",
-  "entryPoint": [
-    "chmod +x main.py",
-    "echo 'Setup complete'"
+  "install": [
+    "echo Run commands here when the package is installed!"
+  ],
+  "uninstall": [
+    "echo Run commands here when the package is uninstalled!"
   ]
 }
 ```
 
-### `"executable"`
-For packages that should be installed as system executables.
-```json
-{
-  "installType": "executable",
-  "installExecutablePath": "/usr/local/bin/myapp",
-  "entryPoint": [
-    "chmod +x main.py",
-    "cp main.py /usr/local/bin/myapp"
-  ]
-}
-```
-
-### `"library"`
-For packages that are libraries or modules.
-```json
-{
-  "installType": "library",
-  "entryPoint": [
-    "pip install -e .",
-    "echo 'Library installed'"
-  ]
-}
-```
-
-## 🚀 Usage
+## Usage
 
 1. **Test the example:**
    ```bash
@@ -65,18 +36,18 @@ For packages that are libraries or modules.
 
 2. **Use as template:**
    - Copy this directory structure
-   - Modify `.install.polly.json` with your requirements
+   - Modify `.install.polly.json` with your commands
    - Update `.polly.json` with your package information
    - Replace `main.py` with your application code
 
-## 📝 Notes
+## Notes
 
-- Entry point commands are executed in the package directory during installation
-- Commands run with the same privileges as the Polly installation (typically requires sudo)
-- Use absolute paths in entry point commands when possible
+- Install/uninstall commands are executed in the package directory during installation
+- Commands run with the privleges you give them, use `sudo` to run as root
+- Use absolute paths in when possible
 - Test your package structure before publishing
 
-## 🔗 Learn More
+## Learn More
 
 - [Polly Documentation](https://github.com/pollypm/polly/wiki)
 - [Package Development Guide](https://github.com/pollypm/polly/wiki/Package-Development)
